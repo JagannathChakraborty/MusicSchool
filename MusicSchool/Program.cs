@@ -27,4 +27,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGet("/", () => "Music School API is running");
+
 app.Run();
