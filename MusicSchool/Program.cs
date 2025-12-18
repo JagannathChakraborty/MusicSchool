@@ -8,7 +8,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-string storageConn = builder.Configuration.GetConnectionString("Storage");
+var storageConn = builder.Configuration["Storage:ConnectionString"];
 
 builder.Services.AddSingleton(new BlobService(storageConn));
 builder.Services.AddSingleton(new TableService(storageConn));
